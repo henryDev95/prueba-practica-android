@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "885106293355",
+    "project_id": "prueba-tecnica-android",
+    "storage_bucket": "prueba-tecnica-android.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:885106293355:android:4561eeb9802bcfa73f4f2e",
+        "android_client_info": {
+          "package_name": "com.henrymoya.amobaapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmqM3LFrPeBQ8EtEkO_qvqOQduQyHKhJU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

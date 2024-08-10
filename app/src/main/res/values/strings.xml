@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">AmobaApp</string>
+    <string name="title">Raza de Perros</string>
+    <string name="register">Registrate</string>
+    <string name="login">Iniciar sesión</string>
+    <string name="txt_email">Dirección de email</string>
+    <string name="txt_password">Tu contraseña</string>
+    <string name="text_title">RAZAS DE PERROS</string>
+    <string name="text_title_race">LISTADO DE PERROS</string>
+    <string name="text_title_form">NUEVA RAZA</string>
+    <string name="accept">Aceptar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="message_success">Inicio de sesión exitodo</string>
+    <string name="message_cancel">Campos vacios</string>
+    <string name="message_error">!Credenciales incorrectas!</string>
+    <string name="title_logout">Salir</string>
+    <string name="title_logout_message">¿Desea cerrar sesión?</string>
+    <string name="save">Guardar</string>
+    <string name="register_success">Registro Exitoso</string>
+    <string name="register_error">!No se registro el usuario!</string>
+    <string name="register_confirm_password">!Las contraseñas no coinciden!</string>
+</resources>
