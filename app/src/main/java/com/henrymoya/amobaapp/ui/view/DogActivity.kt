@@ -30,9 +30,14 @@ class DogActivity : AppCompatActivity() {
         binding.dogList.layoutManager = layoutManager
         binding.dogList.isVisible = true
         binding.viewDogList.isVisible=false
-        raceDogAdapter = RaceDogAdapter(raceDogList){
-            clickItem(it.race)
-        }
+        raceDogAdapter = RaceDogAdapter(
+            listRaceDog = raceDogList,
+            itemSelector = {clickItem(it.race)},
+            onClickItem = {deleteItem(it)},
+            onClickItemEdit = {
+                editData(it)
+            }
+        )
         binding.dogList.adapter = raceDogAdapter
 
         binding.btNewRaceDog.setOnClickListener {
@@ -42,6 +47,37 @@ class DogActivity : AppCompatActivity() {
         binding.logOut.setOnClickListener {
             logoutUser()
         }
+    }
+
+    private fun editData(position: Int) {
+        val builder = AlertDialog.Builder(this)
+        val inflater = LayoutInflater.from(this)
+        val view = inflater.inflate(R.layout.form_add, null)
+        val inputRace = view.findViewById<EditText>(R.id.input_race)
+
+        builder.setView(view)
+            .setTitle("Editar raza")
+            .setPositiveButton(R.string.accept) { dialog, _ ->
+                val raceNew = inputRace.text.toString()
+
+                raceDogList[position] = DogRace(
+                    id = position,
+                    race = raceNew
+                )
+                raceDogAdapter.notifyItemChanged(position)
+                dialog.dismiss()
+            }
+            .setNegativeButton(R.string.cancel) { dialog, _ ->
+                dialog.cancel()
+            }
+
+        val dialog = builder.create()
+        dialog.show()
+    }
+
+    private fun deleteItem(position:Int) {
+        raceDogList.removeAt(position)
+        raceDogAdapter.notifyItemRemoved(position)
     }
 
     @SuppressLint("MissingInflatedId")

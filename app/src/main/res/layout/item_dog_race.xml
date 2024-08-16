@@ -20,7 +20,7 @@
 
         <TextView
             android:id="@+id/nameRaceDog"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
             android:layout_height="match_parent"
             android:paddingStart="20dp"
             android:text="Nombre de razas"
@@ -31,12 +31,23 @@
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:gravity="center">
+            <ImageView
+                android:id="@+id/btDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ico_delete"/>
 
             <ImageView
                 android:id="@+id/btList"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:src="@drawable/ico_list_dog" />
+                android:src="@drawable/ico_list_dog"/>
+
+            <ImageView
+                android:id="@+id/btEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ico_edit"/>
 
         </LinearLayout>
 

@@ -7,19 +7,28 @@ import com.henrymoya.amobaapp.core.model.DogRace
 import com.henrymoya.amobaapp.databinding.ItemDogRaceBinding
 
 class RaceDogAdapter(
-    val listRaceDog: List<DogRace>,
-    private val itemSelector: (DogRace) -> Unit
+    var listRaceDog: MutableList<DogRace>,
+    private val itemSelector: (DogRace) -> Unit,
+    private val onClickItem: (Int) -> Unit,
+    private val onClickItemEdit: (Int) -> Unit
 ) : RecyclerView.Adapter<RaceDogAdapter.RaceDpgViewHolder>() {
 
     class RaceDpgViewHolder(
         private var binding: ItemDogRaceBinding,
         var itemSelector: (DogRace) -> Unit
     ) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(raceDog: DogRace) {
+        fun bind(raceDog: DogRace, onClickItem: (Int) -> Unit, onClickItemEdit: (Int) -> Unit) {
             binding.apply {
                 binding.nameRaceDog.text = raceDog.race
                 this.btList.setOnClickListener {
                     itemSelector(raceDog)
+                }
+                this.btDelete.setOnClickListener{
+                    onClickItem(adapterPosition)
+                }
+
+                this.btEdit.setOnClickListener{
+                    onClickItemEdit(adapterPosition)
                 }
             }
         }
@@ -39,6 +48,6 @@ class RaceDogAdapter(
     }
 
     override fun onBindViewHolder(holder: RaceDpgViewHolder, position: Int) {
-        holder.bind(listRaceDog[position])
+        holder.bind(listRaceDog[position], onClickItem,onClickItemEdit )
     }
 }

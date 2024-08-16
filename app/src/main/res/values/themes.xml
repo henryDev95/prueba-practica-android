@@ -24,4 +24,9 @@
         <item name="boxCornerRadiusTopStart">30dp</item>
 
     </style>
+
+    <style name="SplashStyle" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_content</item>
+    </style>
+
 </resources>
